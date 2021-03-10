@@ -9,10 +9,8 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import ru.marchenko.qaa.test.util.TestAPIBuilder;
-import ru.marchenko.qaa.test.util.impl.TestAPIBuilderImpl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -332,9 +330,9 @@ public class PostsAPIFunctionalTest {
     private final static Map<String, Object> PARAMS_FOR_GET_BY_INVALID_BODY = new HashMap<>();
 
     /**
-     * Builder for test requests
+     * Builder for tests
      */
-    private final TestAPIBuilder testAPIBuilder = new TestAPIBuilderImpl();
+    private final TestAPIBuilder testAPIBuilder = new TestAPIBuilder();
 
     @BeforeAll
     public static void setUp() {
@@ -359,7 +357,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(1)
     public void testGetPostByValidId() {
         testAPIBuilder.buildTestWithPathParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_ID,
@@ -369,7 +366,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(2)
     public void testGetPostByInvalidIdWhichIsNumber() {
         testAPIBuilder.buildTestWithPathParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_ID,
@@ -379,7 +375,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(3)
     public void testGetPostByInvalidIdWhichIsNotNumber() {
         testAPIBuilder.buildTestWithPathParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_ID,
@@ -389,7 +384,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(4)
     public void testGetAllPosts() {
         testAPIBuilder.buildTestWithoutParams(
                 REQUEST_SPECIFICATION_FOR_GET_ALL,
@@ -398,7 +392,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(5)
     public void testGetPostsByValidUserId() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID,
@@ -408,7 +401,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(6)
     public void testGetPostsByInvalidUserIdWhichIsNumber() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID,
@@ -418,7 +410,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(7)
     public void testGetPostsByInvalidUserIdWhichIsNotNumber() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID,
@@ -428,7 +419,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(8)
     public void testGetPostByValidTitle() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_TITLE,
@@ -438,7 +428,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(9)
     public void testGetPostByInvalidTitle() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_TITLE,
@@ -448,7 +437,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(10)
     public void testGetPostByValidBody() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_BODY,
@@ -458,7 +446,6 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    @Order(11)
     public void testGetPostByInvalidBody() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_BODY,
