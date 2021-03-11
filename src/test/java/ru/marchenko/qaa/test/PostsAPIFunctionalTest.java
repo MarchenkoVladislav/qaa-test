@@ -210,18 +210,18 @@ public class PostsAPIFunctionalTest {
     /**
      * Request specification builder
      */
-    private final static RequestSpecificationBuilder REQUEST_SPECIFICATION_BUILDER = new RequestSpecificationBuilder();
+    private final static RequestSpecificationBuilder requestSpecificationBuilder = new RequestSpecificationBuilder();
 
     /**
      * Response specification builder
      */
-    private final static ResponseSpecificationBuilder RESPONSE_SPECIFICATION_BUILDER = new ResponseSpecificationBuilder();
+    private final static ResponseSpecificationBuilder responseSpecificationBuilder = new ResponseSpecificationBuilder();
 
     /**
      * Specification for requests which get posts by id
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ID
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ID
@@ -231,7 +231,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get all posts
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_ALL
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_ALL_POSTS
@@ -241,7 +241,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get posts by userId
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POSTS_BY_USER_ID
@@ -251,7 +251,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get posts by title
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_TITLE
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POSTS_BY_TITLE
@@ -261,7 +261,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get posts by body (field)
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_BODY
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POSTS_BY_BODY
@@ -271,7 +271,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by id and userId
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ID_AND_USER_ID
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ID_AND_USER_ID
@@ -281,7 +281,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by id and title
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ID_AND_TITLE
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ID_AND_TITLE
@@ -291,7 +291,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by id and body
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ID_AND_BODY
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ID_AND_BODY
@@ -301,7 +301,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get posts by userId and title
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID_AND_TITLE
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POSTS_BY_USER_ID_AND_TITLE
@@ -311,7 +311,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get posts by userId and body
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID_AND_BODY
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POSTS_BY_USER_ID_AND_BODY
@@ -321,7 +321,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get posts by title and body
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_TITLE_AND_BODY
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POSTS_BY_TITLE_AND_BODY
@@ -331,7 +331,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by id, userId and title
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ID_AND_USER_ID_AND_TITLE
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ID_AND_USER_ID_AND_TITLE
@@ -341,7 +341,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by id, userId and body
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ID_AND_USER_ID_AND_BODY
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ID_AND_USER_ID_AND_BODY
@@ -351,7 +351,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by userId, title and body
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID_AND_TITLE_AND_BODY
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_USER_ID_AND_TITLE_AND_BODY
@@ -361,7 +361,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by id, title and body
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ID_AND_TITLE_AND_BODY
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ID_AND_TITLE_AND_BODY
@@ -371,7 +371,7 @@ public class PostsAPIFunctionalTest {
      * Specification for requests which get post by all fields
      */
     private final static RequestSpecification REQUEST_SPECIFICATION_FOR_GET_BY_ALL_FIELDS
-            = REQUEST_SPECIFICATION_BUILDER.build(
+            = requestSpecificationBuilder.build(
             BASE_URI,
             CONTENT_TYPE,
             BASE_PATH_POST_BY_ALL_FIELDS
@@ -381,7 +381,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get posts by valid id
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ID
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(ID_FIELD_NAME, anyOf(equalTo(VALID_ID), nullValue())),
             anyOf(matchesJsonSchemaInClasspath(PATH_TO_SCHEMA_FOR_ONE_POST), is(EMPTY_JSON)),
             VALID_STATUS
@@ -391,7 +391,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get posts by invalid id
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_INVALID_ID
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithBodyCheck(
             is(EMPTY_JSON),
             VALID_STATUS
     );
@@ -400,7 +400,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get all posts
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_ALL
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithBodyCheck(
             anyOf(matchesJsonSchemaInClasspath(PATH_TO_SCHEMA_FOR_MANY_POSTS), is(EMPTY_ARRAY)),
             VALID_STATUS
     );
@@ -409,7 +409,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get posts by valid userId
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_USER_ID
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue())),
             anyOf(matchesJsonSchemaInClasspath(PATH_TO_SCHEMA_FOR_MANY_POSTS), is(EMPTY_ARRAY)),
             VALID_STATUS
@@ -419,7 +419,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get posts by any invalid fields
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_POSTS_WHEN_ANY_FIELD_IS_INVALID
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithBodyCheck(
             is(EMPTY_ARRAY),
             VALID_STATUS
     );
@@ -428,7 +428,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get posts by valid title
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_TITLE
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(TITLE_FIELD_NAME, anyOf(everyItem(equalTo(VALID_TITLE)), nullValue())),
             is(anyOf(matchesJsonSchemaInClasspath(PATH_TO_SCHEMA_FOR_MANY_POSTS), is(EMPTY_ARRAY))),
             VALID_STATUS
@@ -438,7 +438,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get posts by valid body
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_BODY
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(BODY_FIELD_NAME, anyOf(everyItem(equalTo(VALID_BODY)), nullValue())),
             is(anyOf(matchesJsonSchemaInClasspath(PATH_TO_SCHEMA_FOR_MANY_POSTS), is(EMPTY_ARRAY))),
             VALID_STATUS
@@ -448,7 +448,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid id and userId
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ID_AND_USER_ID
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_ID)), nullValue()),
                     USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue())
@@ -461,7 +461,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid id and title
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ID_AND_TITLE
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_ID)), nullValue()),
                     TITLE_FIELD_NAME, anyOf(everyItem(equalTo(VALID_TITLE)), nullValue())
@@ -474,7 +474,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid id and body
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ID_AND_BODY
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_ID)), nullValue()),
                     BODY_FIELD_NAME, anyOf(everyItem(equalTo(VALID_BODY)), nullValue())
@@ -487,7 +487,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid userId and title
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_USER_ID_AND_TITLE
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue()),
                     TITLE_FIELD_NAME, anyOf(everyItem(equalTo(VALID_TITLE)), nullValue())
@@ -500,7 +500,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid userId and body
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_USER_ID_AND_BODY
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue()),
                     BODY_FIELD_NAME, anyOf(everyItem(equalTo(VALID_BODY)), nullValue())
@@ -513,7 +513,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid title and body
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_TITLE_AND_BODY
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     TITLE_FIELD_NAME, anyOf(everyItem(equalTo(VALID_TITLE)), nullValue()),
                     BODY_FIELD_NAME, anyOf(everyItem(equalTo(VALID_BODY)), nullValue())
@@ -526,7 +526,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid id, userId and title
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ID_AND_USER_ID_AND_TITLE
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_ID)), nullValue()),
                     USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue()),
@@ -540,7 +540,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid id, userId and body
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ID_AND_USER_ID_AND_BODY
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_ID)), nullValue()),
                     USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue()),
@@ -554,7 +554,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid userId, title and body
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_USER_ID_AND_TITLE_AND_BODY
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue()),
                     TITLE_FIELD_NAME, anyOf(everyItem(equalTo(VALID_TITLE)), nullValue()),
@@ -568,7 +568,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by valid id, title and body
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ID_AND_TITLE_AND_BODY
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_ID)), nullValue()),
                     TITLE_FIELD_NAME, anyOf(everyItem(equalTo(VALID_TITLE)), nullValue()),
@@ -582,7 +582,7 @@ public class PostsAPIFunctionalTest {
      * Specification for responses from requests which get post by all fields
      */
     private final static ResponseSpecification RESPONSE_SPECIFICATION_FOR_GET_BY_VALID_ALL_FIELDS
-            = RESPONSE_SPECIFICATION_BUILDER.buildSpecWithFieldsAndBodyCheck(
+            = responseSpecificationBuilder.buildSpecWithFieldsAndBodyCheck(
             Map.of(
                     ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_ID)), nullValue()),
                     USER_ID_FIELD_NAME, anyOf(everyItem(equalTo(VALID_USER_ID)), nullValue()),
