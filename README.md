@@ -71,7 +71,7 @@ As we can see, there are 2 failed tests. Lets look on them:
 
 ![image](https://user-images.githubusercontent.com/44652081/110789192-a4f6e200-8280-11eb-8efe-3e0c2d145827.png)
 
-These tests are for request GET /posts/{id} with invalid id value. 
+These tests are for request `GET /posts/{id}` with non-existent id value. As described in third task, this request should return status OK (200), but it returned status Not Found (404). As I understood from tasks, this is bug (so I check status 200 in each test), but in my opinion we need to use status 404, when similar situations (getting resource by non-existent id) occure.   
 
 ### The second task
     
