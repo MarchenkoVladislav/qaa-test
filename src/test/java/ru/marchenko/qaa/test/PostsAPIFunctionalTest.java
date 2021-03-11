@@ -57,14 +57,14 @@ public class PostsAPIFunctionalTest {
     private final static int VALID_ID = 1;
 
     /**
-     * Invalid id value (number)
+     * Non-existent id value
      */
-    private final static int INVALID_ID_NUMBER = -1;
+    private final static int NON_EXISTENT_ID = 0;
 
     /**
-     * Invalid id value (not number)
+     * Invalid id value
      */
-    private final static String INVALID_ID_NOT_NUMBER = "b";
+    private final static String INVALID_ID = "b";
 
     /**
      * Valid userId value
@@ -72,14 +72,14 @@ public class PostsAPIFunctionalTest {
     private final static int VALID_USER_ID = 1;
 
     /**
-     * Invalid userId value (number)
+     * Non-existent userId value
      */
-    private final static int INVALID_USER_ID_NUMBER = -1;
+    private final static int NON_EXISTENT_USER_ID = 0;
 
     /**
-     * Invalid userId value (not number)
+     * Invalid userId value
      */
-    private final static String INVALID_USER_ID_NOT_NUMBER = "b";
+    private final static String INVALID_USER_ID = "b";
 
     /**
      * Valid title value
@@ -600,16 +600,16 @@ public class PostsAPIFunctionalTest {
             = Map.of(ID_FIELD_NAME, VALID_ID);
 
     /**
-     * Params for requests which get posts by id (invalid number value)
+     * Params for requests which get posts by id (non-existent value)
      */
-    private final static Map<String, Object> PARAMS_FOR_GET_BY_INVALID_ID_NUMBER
-            = Map.of(ID_FIELD_NAME, INVALID_ID_NUMBER);
+    private final static Map<String, Object> PARAMS_FOR_GET_BY_NON_EXISTENT_ID
+            = Map.of(ID_FIELD_NAME, NON_EXISTENT_ID);
 
     /**
-     * Params for requests which get posts by id (invalid not number value)
+     * Params for requests which get posts by id (invalid value)
      */
-    private final static Map<String, Object> PARAMS_FOR_GET_BY_INVALID_ID_NOT_NUMBER
-            = Map.of(ID_FIELD_NAME, INVALID_ID_NOT_NUMBER);
+    private final static Map<String, Object> PARAMS_FOR_GET_BY_INVALID_ID
+            = Map.of(ID_FIELD_NAME, INVALID_ID);
 
     /**
      * Params for requests which get posts by userId (valid value)
@@ -618,16 +618,16 @@ public class PostsAPIFunctionalTest {
             = Map.of(USER_ID_FIELD_NAME, VALID_USER_ID);
 
     /**
-     * Params for requests which get posts by userId (invalid number value)
+     * Params for requests which get posts by userId (non-existent value)
      */
-    private final static Map<String, Object> PARAMS_FOR_GET_BY_INVALID_USER_ID_NUMBER
-            = Map.of(USER_ID_FIELD_NAME, INVALID_USER_ID_NUMBER);
+    private final static Map<String, Object> PARAMS_FOR_GET_BY_NON_EXISTENT_USER_ID
+            = Map.of(USER_ID_FIELD_NAME, NON_EXISTENT_USER_ID);
 
     /**
-     * Params for requests which get posts by userId (invalid not number value)
+     * Params for requests which get posts by userId (invalid value)
      */
-    private final static Map<String, Object> PARAMS_FOR_GET_BY_INVALID_USER_ID_NOT_NUMBER
-            = Map.of(USER_ID_FIELD_NAME, INVALID_USER_ID_NOT_NUMBER);
+    private final static Map<String, Object> PARAMS_FOR_GET_BY_INVALID_USER_ID
+            = Map.of(USER_ID_FIELD_NAME, INVALID_USER_ID);
 
     /**
      * Params for requests which get posts by title (valid value)
@@ -763,7 +763,7 @@ public class PostsAPIFunctionalTest {
      */
     private final static Map<String, Object> PARAMS_FOR_GET_BY_ALL_FIELDS_INVALID_ID
             = Map.of(
-            ID_FIELD_NAME, INVALID_ID_NUMBER,
+            ID_FIELD_NAME, INVALID_ID,
             USER_ID_FIELD_NAME, VALID_USER_ID,
             TITLE_FIELD_NAME, VALID_TITLE,
             BODY_FIELD_NAME, VALID_BODY
@@ -775,7 +775,7 @@ public class PostsAPIFunctionalTest {
     private final static Map<String, Object> PARAMS_FOR_GET_BY_ALL_FIELDS_INVALID_USER_ID_AND_TITLE
             = Map.of(
             ID_FIELD_NAME, VALID_ID,
-            USER_ID_FIELD_NAME, INVALID_USER_ID_NOT_NUMBER,
+            USER_ID_FIELD_NAME, INVALID_USER_ID,
             TITLE_FIELD_NAME, INVALID_TITLE,
             BODY_FIELD_NAME, VALID_BODY
     );
@@ -786,7 +786,7 @@ public class PostsAPIFunctionalTest {
     private final static Map<String, Object> PARAMS_FOR_GET_BY_ALL_FIELDS_VALID_ID_ONLY
             = Map.of(
             ID_FIELD_NAME, VALID_ID,
-            USER_ID_FIELD_NAME, INVALID_USER_ID_NOT_NUMBER,
+            USER_ID_FIELD_NAME, INVALID_USER_ID,
             TITLE_FIELD_NAME, INVALID_TITLE,
             BODY_FIELD_NAME, INVALID_BODY
     );
@@ -796,8 +796,8 @@ public class PostsAPIFunctionalTest {
      */
     private final static Map<String, Object> PARAMS_FOR_GET_BY_ALL_INVALID_FIELDS
             = Map.of(
-            ID_FIELD_NAME, INVALID_ID_NUMBER,
-            USER_ID_FIELD_NAME, INVALID_USER_ID_NOT_NUMBER,
+            ID_FIELD_NAME, INVALID_ID,
+            USER_ID_FIELD_NAME, INVALID_USER_ID,
             TITLE_FIELD_NAME, INVALID_TITLE,
             BODY_FIELD_NAME, INVALID_BODY
     );
@@ -825,20 +825,20 @@ public class PostsAPIFunctionalTest {
     }
 
     @Test
-    public void testGetPostByInvalidIdWhichIsNumber() {
+    public void testGetPostByNonExistentId() {
         testAPIBuilder.buildTestWithPathParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_ID,
                 RESPONSE_SPECIFICATION_FOR_GET_BY_INVALID_ID,
-                PARAMS_FOR_GET_BY_INVALID_ID_NUMBER
+                PARAMS_FOR_GET_BY_NON_EXISTENT_ID
         );
     }
 
     @Test
-    public void testGetPostByInvalidIdWhichIsNotNumber() {
+    public void testGetPostByInvalidId() {
         testAPIBuilder.buildTestWithPathParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_ID,
                 RESPONSE_SPECIFICATION_FOR_GET_BY_INVALID_ID,
-                PARAMS_FOR_GET_BY_INVALID_ID_NOT_NUMBER
+                PARAMS_FOR_GET_BY_INVALID_ID
         );
     }
 
@@ -866,20 +866,20 @@ public class PostsAPIFunctionalTest {
      * The next tests is for test case: Filtering by query parameters (like /posts?userId=1)
      */
     @Test
-    public void testGetPostsByInvalidUserIdWhichIsNumber() {
+    public void testGetPostsByNonExistentUserIdWhich() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID,
                 RESPONSE_SPECIFICATION_FOR_GET_POSTS_WHEN_ANY_FIELD_IS_INVALID,
-                PARAMS_FOR_GET_BY_INVALID_USER_ID_NUMBER
+                PARAMS_FOR_GET_BY_NON_EXISTENT_USER_ID
         );
     }
 
     @Test
-    public void testGetPostsByInvalidUserIdWhichIsNotNumber() {
+    public void testGetPostsByInvalidUserId() {
         testAPIBuilder.buildTestWithParams(
                 REQUEST_SPECIFICATION_FOR_GET_BY_USER_ID,
                 RESPONSE_SPECIFICATION_FOR_GET_POSTS_WHEN_ANY_FIELD_IS_INVALID,
-                PARAMS_FOR_GET_BY_INVALID_USER_ID_NOT_NUMBER
+                PARAMS_FOR_GET_BY_INVALID_USER_ID
         );
     }
 
