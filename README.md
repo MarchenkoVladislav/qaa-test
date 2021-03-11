@@ -91,6 +91,27 @@ In this task it was necessary to describe test cases about CREATE, UPDATE and DE
     
 ### The third task
 
+In this task it was necessary to create a bug report for the next issue:
+```
+The request GET /posts/0 returned 404 Not Found, but you expect an empty list with 200 OK
+```
+Bug report:
+-   Bug id: 1
+-   Bug name: Incorect behaviour of request GET /posts/0.
+-   Build number: 1.0.0
+-   Severity: Major
+-   Priority: High
+-   Reported by: Marchenko Vladislav
+-   Reported on: 11.03.2021
+-   Reason: Defect
+-   Status: Open
+-   Description: The request GET /posts/0 returned 404 Not Found, but you expect an empty list with 200 OK.
+-   Steps to reproduce: send request GET /posts/0 to our API.
+-   Expected result: Empty list and status 200 OK.
+-   Actual result: status 404 Not Found.
+-   Attachment:
+![image](https://user-images.githubusercontent.com/44652081/110858799-908c0700-82cb-11eb-8ebe-12a67eb7d33f.png)
+
 ## Maintainer
 [Vladislav Marchenko](https://github.com/MarchenkoVladislav)
 
