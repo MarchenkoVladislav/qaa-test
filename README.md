@@ -109,7 +109,7 @@ Bug report:
 -   Reported on: 11.03.2021
 -   Reason: Defect
 -   Status: Open
--   Description: The request GET /posts/0 returned 404 Not Found, but you expect an empty list with 200 OK.
+-   Description: The request GET /posts/0 returned 404 Not Found, but it was expected an empty list with 200 OK.
 -   Steps to reproduce: send request GET /posts/0 to our API.
 -   Expected result: Empty list and status 200 OK.
 -   Actual result: status 404 Not Found.
