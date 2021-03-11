@@ -79,11 +79,14 @@ In this task it was necessary to describe test cases about CREATE, UPDATE and DE
 
 | Summary | Steps | Expected result |
 |-------------------------------------------------------|------------------------------------------------|----------------------------------------------------------|
-|Create post with valid fields.|Send POST request with uri `/posts` and body with valid data: existant userId, valid title and body.|Status CREATED (201) and JSON with properties with the same values as in the request body, but property "id" should be not null.|
-|Create post with non-existant "userId" field.|Send POST request with url `/posts` and body with this data: non-existant userId (for example, -1), valid title and body.|Status BAD REQUEST (400) and empty JSON.|
-|Create post with invalid "userId" field.|Send POST request with url `/posts` and body with this data: invalid userId (for example, "id"), valid title and body.|Status BAD REQUEST (400) and empty JSON.|
-|Create post with invalid "title" field.|Send POST request with url `/posts` and body with this data: valid userId and body, invalid title (for example, 5 as number).|Status BAD REQUEST (400) and empty JSON.|
-|Create post with invalid "body" field.|Send POST request with url `/posts` and body with this data: valid userId and title, invalid body (for example, 5 as number).|Status BAD REQUEST (400) and empty JSON.|
+|Create post with valid fields.|Send POST request with uri `/posts` and body with valid data: existant userId, valid title and body.|Status CREATED (201) and non-empty JSON with properties with the same values as in the request body, but property "id" should be not null.|
+|Create post with non-existant "userId" field.|Send POST request with uri `/posts` and body with this data: non-existant userId (for example, -1), valid title and body.|Status BAD REQUEST (400) and empty JSON.|
+|Create post with invalid "userId" field.|Send POST request with uri `/posts` and body with this data: invalid userId (for example, "id"), valid title and body.|Status BAD REQUEST (400) and empty JSON.|
+|Create post with invalid "title" field.|Send POST request with uri `/posts` and body with this data: valid userId and body, invalid title (for example, 5 as number).|Status BAD REQUEST (400) and empty JSON.|
+|Create post with invalid "body" field.|Send POST request with uri `/posts` and body with this data: valid userId and title, invalid body (for example, 5 as number).|Status BAD REQUEST (400) and empty JSON.|
+|Update post by valid and existant id with correct updatable info.|Send PUT request with uri `/posts/{id}` (id is valid and existant) and body with this data: valid userId, title and body.|Status OK (200) and non-empty JSON with properties with the same values as in the request body (id as in uri `/posts/{id}`).|
+|Update post by non-existant id with correct updatable info.|Send PUT request with uri `/posts/{id}` (id is non-existant, for example, -1) and body with this data: valid userId, title and body.|Status NOT FOUND (404) and empty JSON.|
+|Update post by invalid id with correct updatable info.|Send PUT request with uri `/posts/{id}` (id is non-existant, for example, -1) and body with this data: valid userId, title and body.|Status NOT FOUND (404) and empty JSON.|
     
 ### The third task
 
