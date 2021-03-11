@@ -67,13 +67,23 @@ After executing the commands, an Allure report appeared in browser:
 
 ![image](https://user-images.githubusercontent.com/44652081/110792511-8f83b700-8284-11eb-96ef-3a43da0a06f0.png)
 
-As we can see, there are 2 failed tests. Lets look on them:
+As we can see, there are 2 failed tests. Lets look at them:
 
 ![image](https://user-images.githubusercontent.com/44652081/110792792-e12c4180-8284-11eb-8fb8-1bc76d0ebe4a.png)
 
-These tests are for request `GET /posts/{id}` with non-existent and invalid id value. As described in third task, this request should return status OK (200), but it returned status Not Found (404). As I understood from tasks, this is bug (so I check status 200 in each test), but in my opinion we need to use status 404, when similar situations (getting resource by non-existent id) occure.   
+These tests are for request `GET /posts/{id}` with non-existent and invalid id value. As described in third task, this request should return status OK (200), but it returned status Not Found (404). As I understood from tasks, this is bug (so code checks status 200 in each test), but in my opinion we need to use status 404, when similar situations (getting resource by non-existent id) occure.   
 
 ### The second task
+
+In this task it was necessary to describe test cases about CREATE, UPDATE and DELETE operations.
+
+| Summary | Steps | Expected result |
+|-------------------------------------------------------|------------------------------------------------|----------------------------------------------------------|
+|Create post with valid fields.|Send POST request with uri `/posts` and body with valid data: existant userId, valid title and body.|Status CREATED (201) and JSON with properties with the same values as in the request body, but property "id" should be not null.|
+|Create post with non-existant "userId" field.|Send POST request with url `/posts` and body with this data: non-existant userId (for example, -1), valid title and body.|Status BAD REQUEST (400) and empty JSON.|
+|Create post with invalid "userId" field.|Send POST request with url `/posts` and body with this data: invalid userId (for example, "id"), valid title and body.|Status BAD REQUEST (400) and empty JSON.|
+|Create post with invalid "title" field.|Send POST request with url `/posts` and body with this data: valid userId and body, invalid title (for example, 5 as number).|Status BAD REQUEST (400) and empty JSON.|
+|Create post with invalid "body" field.|Send POST request with url `/posts` and body with this data: valid userId and title, invalid body (for example, 5 as number).|Status BAD REQUEST (400) and empty JSON.|
     
 ### The third task
 
