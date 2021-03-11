@@ -32,9 +32,9 @@ Test cases:
 
 26 tests were developed:
 - 1 test for getting all posts
-- 3 tests for getting post by id: valid id (1), invalid number id (-1), invalid not number id (b)
+- 3 tests for getting post by id: valid id (1), non-existent id (-1), invalid id (b)
 - 22 tests for getting posts by parameters:
-    - 3 tests for getting posts by userId: valid userId (1), invalid number userId (-1), invalid not number userId (b)
+    - 3 tests for getting posts by userId: valid userId (1), non-existent userId (-1), invalid userId (b)
     - 2 tests for getting posts by title: valid title, invalid title (not string)
     - 2 tests for getting posts by body: valid body, invalid body (not string)
     - 11 tests for getting posts by multiple valid parameters:
@@ -65,13 +65,13 @@ Tests were runned with Maven:
 
 After executing the commands, an Allure report appeared in browser:
 
-![image](https://user-images.githubusercontent.com/44652081/110788921-50ebfd80-8280-11eb-908b-3880765d6f5d.png)
+![image](https://user-images.githubusercontent.com/44652081/110792511-8f83b700-8284-11eb-96ef-3a43da0a06f0.png)
 
 As we can see, there are 2 failed tests. Lets look on them:
 
-![image](https://user-images.githubusercontent.com/44652081/110789192-a4f6e200-8280-11eb-8efe-3e0c2d145827.png)
+![image](https://user-images.githubusercontent.com/44652081/110792792-e12c4180-8284-11eb-8fb8-1bc76d0ebe4a.png)
 
-These tests are for request `GET /posts/{id}` with non-existent id value. As described in third task, this request should return status OK (200), but it returned status Not Found (404). As I understood from tasks, this is bug (so I check status 200 in each test), but in my opinion we need to use status 404, when similar situations (getting resource by non-existent id) occure.   
+These tests are for request `GET /posts/{id}` with non-existent and invalid id value. As described in third task, this request should return status OK (200), but it returned status Not Found (404). As I understood from tasks, this is bug (so I check status 200 in each test), but in my opinion we need to use status 404, when similar situations (getting resource by non-existent id) occure.   
 
 ### The second task
     
